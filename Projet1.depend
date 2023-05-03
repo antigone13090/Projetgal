@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1682837388 source:c:\users\masth\desktop\projetchatgpt\projet2023\main_project.cpp
+
+1682789756 source:c:\users\masth\desktop\projetchatgpt\projet2023\src\ast.cpp
+	"ast.h"
+	<cctype>
+	<memory>
+
+1682789636 c:\users\masth\desktop\projetchatgpt\projet2023\src\ast.h
+	<memory>
+	<sstream>
+

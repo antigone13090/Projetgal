@@ -1,0 +1,61 @@
+# Project: Projet1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main_project.o src/ast.o src/dfa.o src/lexer_generator.o src/main.o src/nfa.o src/regex_parser.o src/state.o src/c_code_generator.o src/dfa_minimization.o src/graphviz_export.o src/nfa_to_dfa.o
+LINKOBJ  = main_project.o src/ast.o src/dfa.o src/lexer_generator.o src/main.o src/nfa.o src/regex_parser.o src/state.o src/c_code_generator.o src/dfa_minimization.o src/graphviz_export.o src/nfa_to_dfa.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Projet1.exe
+CXXFLAGS = $(CXXINCS) -std=c++14
+CFLAGS   = $(INCS) -std=c++14
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main_project.o: main_project.cpp
+	$(CPP) -c main_project.cpp -o main_project.o $(CXXFLAGS)
+
+src/ast.o: src/ast.cpp
+	$(CPP) -c src/ast.cpp -o src/ast.o $(CXXFLAGS)
+
+src/dfa.o: src/dfa.cpp
+	$(CPP) -c src/dfa.cpp -o src/dfa.o $(CXXFLAGS)
+
+src/lexer_generator.o: src/lexer_generator.cpp
+	$(CPP) -c src/lexer_generator.cpp -o src/lexer_generator.o $(CXXFLAGS)
+
+src/main.o: src/main.cpp
+	$(CPP) -c src/main.cpp -o src/main.o $(CXXFLAGS)
+
+src/nfa.o: src/nfa.cpp
+	$(CPP) -c src/nfa.cpp -o src/nfa.o $(CXXFLAGS)
+
+src/regex_parser.o: src/regex_parser.cpp
+	$(CPP) -c src/regex_parser.cpp -o src/regex_parser.o $(CXXFLAGS)
+
+src/state.o: src/state.cpp
+	$(CPP) -c src/state.cpp -o src/state.o $(CXXFLAGS)
+
+src/c_code_generator.o: src/c_code_generator.cpp
+	$(CPP) -c src/c_code_generator.cpp -o src/c_code_generator.o $(CXXFLAGS)
+
+src/dfa_minimization.o: src/dfa_minimization.cpp
+	$(CPP) -c src/dfa_minimization.cpp -o src/dfa_minimization.o $(CXXFLAGS)
+
+src/graphviz_export.o: src/graphviz_export.cpp
+	$(CPP) -c src/graphviz_export.cpp -o src/graphviz_export.o $(CXXFLAGS)
+
+src/nfa_to_dfa.o: src/nfa_to_dfa.cpp
+	$(CPP) -c src/nfa_to_dfa.cpp -o src/nfa_to_dfa.o $(CXXFLAGS)
